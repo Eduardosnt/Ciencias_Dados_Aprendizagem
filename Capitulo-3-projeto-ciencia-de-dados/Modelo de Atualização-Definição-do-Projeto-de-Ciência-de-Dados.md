@@ -56,8 +56,8 @@ Clientes e donos de oficinas enfrentam a falta de transparência em orçamentos,
 
 | Evidência | Fonte | O que ela indica? | Confiabilidade / limitação |
 |---|---|---|---|
-| 1.Variação excessiva de preços para o mesmo serviço. |Pesquisa de mercado / Relatos de clientes.|Assimetria de informações no mercado automotivo.|Alta / Limitada à região de pesquisa.|
-| 2.Horários ociosos ao longo da semana nas oficinas. |Observação direta / Entrevistas com mecânicos.|Má distribuição e controle de agendamentos.|Média / Depende do porte da oficina.|
+| Variação excessiva de preços para o mesmo serviço. |Pesquisa de mercado / Relatos de clientes.|Assimetria de informações no mercado automotivo.|Alta / Limitada à região de pesquisa.|
+| Horários ociosos ao longo da semana nas oficinas. |Observação direta / Entrevistas com mecânicos.|Má distribuição e controle de agendamentos.|Média / Depende do porte da oficina.|
 
 ## 4. Público-alvo e partes interessadas
 
@@ -118,8 +118,6 @@ As perguntas de negócio orientam a coleta, a análise e a comunicação dos res
 | 1 | Quais são as oficinas com as melhores taxas de avaliação e por quê? | Escolha da oficina pelo cliente. | Notas de avaliação (1 a 5), comentários, tipo de serviço realizado. | Média ponderada de avaliações (Ranking). |
 | 2 | Qual é a sazonalidade e os dias de pico de agendamentos? | Alocação de mecânicos na oficina. | Data e hora do serviço agendado, status de conclusão. | Gráfico de linha/barras de volume de atendimentos por dia da semana. |
 | 3 | Qual é o ticket médio dos serviços prestados por categoria? | Planejamento financeiro da oficina. | Valores cobrados, categorias de serviço. | Ticket médio (R$) consolidado no dashboard. |
-| 4 | | | | |
-| 5 | | | | |
 
 ## 7. Hipóteses iniciais
 
@@ -129,7 +127,6 @@ Registre suposições que serão investigadas, sem apresentá-las como conclusõ
 |---|---|---|
 | H1. Oficinas com ranking de avaliação superior a 4.0 recebem no mínimo 40% mais agendamentos via plataforma. | Correlacionando a nota média da oficina com o volume de agendamentos mensais. | A distribuição de agendamentos se mostrar aleatória ou uniforme independente da nota. |
 | H2. A exibição prévia de estimativa de valor aumenta a taxa de conclusão dos agendamentos. | Comparando a taxa de cancelamento (no-show) de serviços com valores expostos previamente vs. serviços com valor a definir. | A taxa de abandono ser igual ou maior nos serviços com estimativa de valor. |
-| H3. | | |
 
 ## 8. Dados necessários e viabilidade
 
@@ -137,7 +134,6 @@ Registre suposições que serão investigadas, sem apresentá-las como conclusõ
 |---|---|---|---|---|
 | Banco de Dados TechMotors | id_agendamento, id_oficina, data_hora, valor, status | SQL (MySQL/SQLite) | Eduardo (Dev) | Alta (dados estruturados e tipados na aplicação) |
 | Tabela de Avaliações | id_avaliacao, id_oficina, nota, comentario | SQL | Eduardo (Dev) | Alta |
-| | | | | |
 
 ### 8.1 Avaliação inicial dos dados
 
@@ -167,9 +163,10 @@ ________________________________________________________________________________
 
 | Dentro do escopo | Fora do escopo |
 |---|---|
-| | |
-| | |
-| | |
+| Construção da base de dados relacional. | Processamento real de pagamentos e transações financeiras (gateways de pagamento). |
+| Desenvolvimento de dashboards interativos de faturamento e agendamentos. | Uso de IA preditiva avançada (ex: visão computacional para detectar falhas no carro). |
+| Criação do algoritmo de ranqueamento de oficinas. | |
+
 
 **Restrições conhecidas:** tempo, acesso a dados, ferramentas, infraestrutura, conhecimento técnico ou normas.
 
@@ -193,51 +190,48 @@ Defina como a equipe saberá se o projeto alcançou seus objetivos.
 |---|---|---|---|
 | Relevância para o problema | | | |
 | Qualidade dos dados | | | |
-| Qualidade da análise | | | |
-| Utilidade para o público-alvo | | | |
+| Qualidade da análise | Cálculo de avaliações. | O sistema deve refletir em tempo real (ou próximo) a mudança de nota da oficina assim que uma nova avaliação for registrada. | |
+| Utilidade para o público-alvo | Navegação na tela de agendamento e leitura do painel de métricas. | O fluxo de agendamento e visualização de faturamento deve ocorrer sem erros no sistema (CRUD completo). | |
 | Comunicação dos resultados | | | |
 
 ## 12. Plano inicial de trabalho
 
 | Etapa | Atividades principais | Responsável(is) | Prazo | Dependências |
 |---|---|---|---|---|
-| 1. Definição | | | | |
-| 2. Obtenção dos dados | | | | |
-| 3. Preparação dos dados | | | | |
-| 4. Análise / modelagem | | | | |
-| 5. Validação | | | | |
-| 6. Comunicação | | | | |
+| 1. Definição | Preenchimento deste documento de escopo e arquitetura. | Thiago | Imediato | N/A |
+| 2. Obtenção dos dados\Preparação dos dados  | Criação das tabelas no MySQL/SQLite e geração de dados mockados para testes. | Eduardo | Curto prazo | Etapa 1 |
+| 3. Análise / modelagem | Desenvolver as lógicas de ranking e métricas financeiras (Backend/SQL). | Eduardo | | Etapa 2 |
+| 4. Validação | Testes de integração entre o painel, agendamentos e base de dados. | Thiago / Eduardo | Médio prazo | Etapa 3 |
+| 5. Comunicação | Apresentação final dos Dashboards e funcionamento do portal na disciplina. | Equipe | Fim do semestre | Etapa 4 |
 
 ## 13. Riscos do projeto
 
 | Risco | Probabilidade | Impacto | Estratégia de resposta | Responsável |
 |---|---|---|---|---|
-| | Baixa / Média / Alta | Baixo / Médio / Alto | | |
-| | Baixa / Média / Alta | Baixo / Médio / Alto | | |
-| | Baixa / Média / Alta | Baixo / Médio / Alto | | |
+| Atraso na integração Front e Back-end. | Alto | Utilizar frameworks ágeis e focar primeiro no fluxo essencial (MVP). | Thiago/Eduardo |
+| Baixo volume de dados mockados limitando o dashboard. | Baixa | Médio | Criar scripts (ex: Python/Node.js) para popular o banco com dezenas de registros fictícios de agendamentos. | Eduardo |
 
 ## 14. Organização da equipe
 
 | Integrante | Papel principal | Responsabilidades | Apoio necessário |
 |---|---|---|---|
-| | | | |
-| | | | |
-| | | | |
-| | | | |
+| Thiago Regis | Gestor de Projetos | Organizar o fluxo de trabalho, documentação (TCC/Relatórios), e validação de requisitos de negócio. | Alinhamento contínuo com os professores. |
+| Eduardo Santos | Dev FullStack | Modelagem do banco (MySQL/SQLite), desenvolvimento do Backend (Node.js/PHP) e estruturação do frontend (HTML/CSS/JS/TS). | Definição clara de telas e métricas por parte da gestão. |
+
 
 ## 15. Validação da definição do projeto
 
 Antes da entrega, confirme:
 
-- [ ] O problema é real, relevante e delimitado.
-- [ ] O público-alvo e as partes interessadas estão identificados.
-- [ ] O objetivo geral e os objetivos específicos são coerentes.
-- [ ] As perguntas de negócio orientam decisões concretas.
-- [ ] Há dados potencialmente disponíveis para responder às perguntas.
-- [ ] O escopo é compatível com o prazo e os recursos.
-- [ ] Os critérios de sucesso são mensuráveis.
-- [ ] Riscos, privacidade, ética e segurança foram considerados.
-- [ ] Funções e responsabilidades foram distribuídas.
+- [x] O problema é real, relevante e delimitado.
+- [x] O público-alvo e as partes interessadas estão identificados.
+- [x] O objetivo geral e os objetivos específicos são coerentes.
+- [x] As perguntas de negócio orientam decisões concretas.
+- [x] Há dados potencialmente disponíveis para responder às perguntas.
+- [x] O escopo é compatível com o prazo e os recursos.
+- [x] Os critérios de sucesso são mensuráveis.
+- [x] Riscos, privacidade, ética e segurança foram considerados.
+- [x] Funções e responsabilidades foram distribuídas.
 
 ## 16. Aprovação e registro de ajustes
 
