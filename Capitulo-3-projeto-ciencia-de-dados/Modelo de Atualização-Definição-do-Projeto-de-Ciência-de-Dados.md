@@ -84,7 +84,7 @@ Clientes e donos de oficinas enfrentam a falta de transparência em orçamentos,
 
 Escreva um objetivo que indique o que será analisado, para qual finalidade e em qual contexto. Inicie com um verbo no infinitivo.
 
-**Objetivo geral:**
+Desenvolver e analisar a base de dados transacional da plataforma TechMotors para estruturar um sistema de ranqueamento de oficinas e gerar dashboards analíticos que otimizem a tomada de decisão tanto do cliente final quanto do prestador de serviço.
 
 ________________________________________________________________________________
 
@@ -94,11 +94,10 @@ Defina de três a cinco objetivos mensuráveis e compatíveis com o prazo do pro
 
 | Nº | Objetivo específico | Evidência de conclusão |
 |---:|---|---|
-| 1 | | |
-| 2 | | |
-| 3 | | |
-| 4 | | |
-| 5 | | |
+| 1 | Estruturar a coleta e o armazenamento de dados estruturados (agendamentos, avaliações, serviços). | Banco de dados (MySQL) populado com dados iniciais ou simulados. |
+| 2 | Desenvolver uma métrica (score) de ranqueamento para as oficinas com base nas avaliações dos usuários. | Algoritmo de ranking implementado e listando as oficinas ordenadamente. |
+| 3 | Criar visualizações analíticas (dashboards) focadas em faturamento e ocupação de agenda. | Telas de dashboard integradas ao sistema web para visão do mecânico. |
+
 
 ### 5.3 Verificação dos objetivos
 
@@ -116,9 +115,9 @@ As perguntas de negócio orientam a coleta, a análise e a comunicação dos res
 
 | Nº | Pergunta de negócio | Decisão apoiada | Dados necessários | Análise ou indicador possível |
 |---:|---|---|---|---|
-| 1 | | | | |
-| 2 | | | | |
-| 3 | | | | |
+| 1 | Quais são as oficinas com as melhores taxas de avaliação e por quê? | Escolha da oficina pelo cliente. | Notas de avaliação (1 a 5), comentários, tipo de serviço realizado. | Média ponderada de avaliações (Ranking). |
+| 2 | Qual é a sazonalidade e os dias de pico de agendamentos? | Alocação de mecânicos na oficina. | Data e hora do serviço agendado, status de conclusão. | Gráfico de linha/barras de volume de atendimentos por dia da semana. |
+| 3 | Qual é o ticket médio dos serviços prestados por categoria? | Planejamento financeiro da oficina. | Valores cobrados, categorias de serviço. | Ticket médio (R$) consolidado no dashboard. |
 | 4 | | | | |
 | 5 | | | | |
 
@@ -128,37 +127,40 @@ Registre suposições que serão investigadas, sem apresentá-las como conclusõ
 
 | Hipótese | Como poderá ser testada? | Resultado que a refutaria? |
 |---|---|---|
-| H1. | | |
-| H2. | | |
+| H1. Oficinas com ranking de avaliação superior a 4.0 recebem no mínimo 40% mais agendamentos via plataforma. | Correlacionando a nota média da oficina com o volume de agendamentos mensais. | A distribuição de agendamentos se mostrar aleatória ou uniforme independente da nota. |
+| H2. A exibição prévia de estimativa de valor aumenta a taxa de conclusão dos agendamentos. | Comparando a taxa de cancelamento (no-show) de serviços com valores expostos previamente vs. serviços com valor a definir. | A taxa de abandono ser igual ou maior nos serviços com estimativa de valor. |
 | H3. | | |
 
 ## 8. Dados necessários e viabilidade
 
 | Conjunto ou fonte de dados | Variáveis principais | Formato | Acesso / responsável | Qualidade esperada |
 |---|---|---|---|---|
-| | | | | |
-| | | | | |
+| Banco de Dados TechMotors | id_agendamento, id_oficina, data_hora, valor, status | SQL (MySQL/SQLite) | Eduardo (Dev) | Alta (dados estruturados e tipados na aplicação) |
+| Tabela de Avaliações | id_avaliacao, id_oficina, nota, comentario | SQL | Eduardo (Dev) | Alta |
 | | | | | |
 
 ### 8.1 Avaliação inicial dos dados
 
-- **Disponibilidade:** __________________________________________________________
-- **Volume e período coberto:** __________________________________________________
-- **Dados ausentes, duplicados ou inconsistentes previstos:** ______________________
-- **Necessidade de integração entre fontes:** _____________________________________
-- **Restrições legais, contratuais ou institucionais:** _____________________________
+- **Disponibilidade:**
+  - Dados gerados pelo próprio uso e simulação na aplicação web (backend em Node.js/PHP).
+- **Volume e período coberto:**
+  - Histórico desde a ativação dos primeiros clientes teste no sistema.
+- **Dados ausentes, duplicados ou inconsistentes previstos:**
+- **Necessidade de integração entre fontes:** 
+- **Restrições legais, contratuais ou institucionais:**
+  - Necessidade de adequação à LGPD devido ao armazenamento de dados de usuários (placas de veículos, nomes, contatos).
 
 ### 8.2 Privacidade, ética e segurança
 
-- [ ] A equipe verificou se há dados pessoais ou sensíveis.
-- [ ] A coleta e o uso dos dados possuem finalidade legítima e explícita.
+- [X] A equipe verificou se há dados pessoais ou sensíveis.
+- [X] A coleta e o uso dos dados possuem finalidade legítima e explícita.
 - [ ] O acesso será limitado às pessoas autorizadas.
-- [ ] Dados pessoais serão minimizados, anonimizados ou pseudonimizados quando necessário.
+- [X] Dados pessoais serão minimizados, anonimizados ou pseudonimizados quando necessário.
 - [ ] Possíveis vieses e impactos sobre grupos serão analisados.
 - [ ] A divulgação dos resultados evitará reidentificação ou exposição indevida.
 
 **Cuidados específicos deste projeto:**
-
+ - Senhas criptografadas no banco, e não exposição de dados de contato do cliente abertamente no ranking público das oficinas.
 ________________________________________________________________________________
 
 ## 9. Escopo do projeto
