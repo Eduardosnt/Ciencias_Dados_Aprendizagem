@@ -25,8 +25,7 @@
 Plataforma de agendamento de serviços mecânicos, fornecendo a intermediação entre o cliente e a oficina “QUALIFICADA e com boas avaliações”, o cliente pode marcar o serviço na plataforma já ciente dos possíveis valores, além da escolha personalizada do tipo do serviço, após a finalização do serviço o cliente pode avaliar a mecânica assim retornando o ranking de avaliação para mais ou menos, além disso é fornecido a mecânica os horários de agendamento, com calendário e dashboard dos seus serviços fornecidos e faturamento gerado. 
 
 ### 2.2 Declaração do projeto em uma frase
-
-> Nosso projeto utilizará **[dados ou fonte]** para compreender/prever **[fenômeno]**, apoiando **[público ou organização]** na decisão de **[decisão ou ação]**.
+Nosso projeto utilizará os dados de avaliações, histórico de serviços e faturamento para compreender/prever a reputação das oficinas e a demanda de serviços, apoiando os motoristas na decisão de escolha do melhor prestador e as oficinas na gestão financeira e de horários.
 
 **Versão da equipe:**
 0.1
@@ -39,34 +38,26 @@ ________________________________________________________________________________
 Descreva a situação atual, o ambiente em que o problema ocorre e as evidências iniciais que demonstram sua relevância.
 
 - Onde o problema ocorre?
-    Oficina mecanicas 
+    **No ecossistema de manutenção automotiva (oficinas mecânicas e auto centers).**
 - Quem é afetado?
+    **Clientes (motoristas) que sofrem com a falta de previsibilidade de preços e confiança na qualidade; e Oficinas que têm dificuldades na gestão de agenda e retenção de clientes.**
 - Quais sinais, dados ou relatos indicam sua existência?
+    **A ociosidade de horários nas oficinas, o alto volume de orçamentos informais via aplicativos de mensagens sem conversão em serviços, e a dificuldade relatada por clientes em encontrar mecânicos de confiança fora de seu círculo social.**
 - Por que é importante investigá-lo agora?
+    **A digitalização de serviços tradicionais é uma demanda crescente. Otimizar esse fluxo através da organização dos dados gera lucro para as oficinas e segurança para o consumidor.**
 
-**Preenchimento:**
-
-________________________________________________________________________________
 
 ________________________________________________________________________________
 
 ### 3.2 Problema central
 
-Formule o problema de maneira específica, sem antecipar uma solução.
-
-> **Modelo:** [Público/organização] enfrenta [problema observável] no contexto de [situação], produzindo [consequência ou impacto].
-
-**Problema definido:**
-
-________________________________________________________________________________
-
+Clientes e donos de oficinas enfrentam a falta de transparência em orçamentos, dificuldade na validação da qualidade técnica e má gestão de agendas no contexto de manutenção automotiva preventiva e corretiva, produzindo perda de tempo, imprevisibilidade financeira e ociosidade operacional.
 ### 3.3 Evidências iniciais
 
 | Evidência | Fonte | O que ela indica? | Confiabilidade / limitação |
 |---|---|---|---|
-| 1. | | | |
-| 2. | | | |
-| 3. | | | |
+| 1.Variação excessiva de preços para o mesmo serviço. |Pesquisa de mercado / Relatos de clientes.|Assimetria de informações no mercado automotivo.|Alta / Limitada à região de pesquisa.|
+| 2.Horários ociosos ao longo da semana nas oficinas. |Observação direta / Entrevistas com mecânicos.|Má distribuição e controle de agendamentos.|Média / Depende do porte da oficina.|
 
 ## 4. Público-alvo e partes interessadas
 
@@ -74,18 +65,18 @@ ________________________________________________________________________________
 
 | Aspecto | Descrição |
 |---|---|
-| Quem são os usuários ou beneficiários? | |
-| Quais necessidades possuem? | |
-| Como são afetados pelo problema? | |
-| Que decisão ou ação poderão tomar com os resultados? | |
+| Quem são os usuários ou beneficiários? | Motoristas pessoa física e gestores de oficinas mecânicas. |
+| Quais necessidades possuem? | Motoristas precisam de previsibilidade de preço e confiança técnica. Oficinas precisam de organização de fluxo e visibilidade de faturamento. |
+| Como são afetados pelo problema? | Gastam tempo excessivo cotando serviços ou gerenciando agendas manualmente. |
+| Que decisão ou ação poderão tomar com os resultados? | Clientes: Qual oficina escolher baseada no ranking. Oficinas: Quais dias/horários precisam de promoções ou realocação de equipe (baseado no dashboard). |
 
 ### 4.2 Partes interessadas
 
 | Parte interessada | Interesse no projeto | Influência | Forma de envolvimento |
 |---|---|---|---|
-| | | Baixa / Média / Alta | |
-| | | Baixa / Média / Alta | |
-| | | Baixa / Média / Alta | |
+| Equipe de Desenvolvimento (Eduardo e Thiago) | | Baixa / Média / Alta | Execução técnica e gestão |
+| Professor(a) Eliel | | Baixa / Média / Alta | Avaliação e direcionamento acadêmico |
+| Oficinas parceiras | | Baixa / Média / Alta | Fornecimento de requisitos de negócio e testes de usabilidade |
 
 ## 5. Objetivos do projeto
 
