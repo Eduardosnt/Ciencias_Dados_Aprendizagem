@@ -38,13 +38,13 @@ ________________________________________________________________________________
 Descreva a situação atual, o ambiente em que o problema ocorre e as evidências iniciais que demonstram sua relevância.
 
 - Onde o problema ocorre?
-    **No ecossistema de manutenção automotiva (oficinas mecânicas e auto centers).**
+   - **No ecossistema de manutenção automotiva (oficinas mecânicas e auto centers).**
 - Quem é afetado?
-    **Clientes (motoristas) que sofrem com a falta de previsibilidade de preços e confiança na qualidade; e Oficinas que têm dificuldades na gestão de agenda e retenção de clientes.**
+   - **Clientes (motoristas) que sofrem com a falta de previsibilidade de preços e confiança na qualidade; e Oficinas que têm dificuldades na gestão de agenda e retenção de clientes.**
 - Quais sinais, dados ou relatos indicam sua existência?
-    **A ociosidade de horários nas oficinas, o alto volume de orçamentos informais via aplicativos de mensagens sem conversão em serviços, e a dificuldade relatada por clientes em encontrar mecânicos de confiança fora de seu círculo social.**
+    - **A ociosidade de horários nas oficinas, o alto volume de orçamentos informais via aplicativos de mensagens sem conversão em serviços, e a dificuldade relatada por clientes em encontrar mecânicos de confiança fora de seu círculo social.**
 - Por que é importante investigá-lo agora?
-    **A digitalização de serviços tradicionais é uma demanda crescente. Otimizar esse fluxo através da organização dos dados gera lucro para as oficinas e segurança para o consumidor.**
+   - **A digitalização de serviços tradicionais é uma demanda crescente. Otimizar esse fluxo através da organização dos dados gera lucro para as oficinas e segurança para o consumidor.**
 
 
 ________________________________________________________________________________
@@ -74,9 +74,9 @@ Clientes e donos de oficinas enfrentam a falta de transparência em orçamentos,
 
 | Parte interessada | Interesse no projeto | Influência | Forma de envolvimento |
 |---|---|---|---|
-| Equipe de Desenvolvimento (Eduardo e Thiago) | | Baixa / Média / Alta | Execução técnica e gestão |
-| Professor(a) Eliel | | Baixa / Média / Alta | Avaliação e direcionamento acadêmico |
-| Oficinas parceiras | | Baixa / Média / Alta | Fornecimento de requisitos de negócio e testes de usabilidade |
+| Equipe de Desenvolvimento (Eduardo e Thiago) | Alta | Baixa / Média / Alta | Execução técnica e gestão |
+| Professor(a) Eliel | Alta | Alta | Avaliação e direcionamento acadêmico |
+| Oficinas parceiras | Média | Média | Fornecimento de requisitos de negócio e testes de usabilidade |
 
 ## 5. Objetivos do projeto
 
