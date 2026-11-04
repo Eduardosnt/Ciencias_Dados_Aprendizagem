@@ -1,141 +1,80 @@
- <img src="assets/logo-udf.jpg" alt="UDF Centro Universitário" width="230">
-
-
 **Profa. Kadidja Valéria | UDF**  
-
 Ciência de Dados e Aprendizado de Máquina · Sistemas de Informação · 2026.2
-
 
 # Aula 1 — Conceitos e classificação de problemas
 
-
 ## Identificação
 
-
-    Estudante ou equipe: 
-
-    Turma: **Sistemas de Informação — Noturno — Quarta-feira** 
-
-
-    Data de realização: **20/10/2026** 
-
-
-
+- Estudante ou equipe: Thiago Regis Vieira Rocha e Eduardo santos 
+- Turma: Sistemas de Informação
+- Data de realização: 20/10/2026
+- Integrantes e contribuições (se em equipe): Thiago Regis Vieira Rocha
 
 ## Objetivos
 
-
 Distinguir programação tradicional e Machine Learning, identificar atributos e alvo e diferenciar classificação, regressão e agrupamento.
-
 
 ## 1. Explicação com suas palavras
 
+1. **Como um modelo aprende com dados?**  
+   O modelo recebe exemplos dados históricos, cada um descrito por atributos e, quando existe, pela resposta correta, o algoritmo de treino ajusta os parâmetros internos do modelo para que as previsões fiquem o mais próximas possível das respostas reais, reduzindo o erro a cada ajuste, depois do treino, o modelo aplica os padrões que encontrou a dados novos que nunca viu, a diferença para a programação tradicional é que lá o programador escreve as regras e o "Machine Learning" as regras são inferidas a partir dos dados que são apresentados.
 
-    Como um modelo aprende com dados? **O algoritmo recebe muitos exemplos (registros com atributos e, no caso supervisionado, o resultado conhecido) e ajusta parâmetros internos para reduzir o erro entre o que ele prevê e o que realmente aconteceu. Ao final, as regras não foram escritas por um programador: foram extraídas dos padrões presentes nos dados. Depois testamos o modelo em dados que ele não viu, para saber se ele generaliza.** 
+2. **Qual diferença entre algoritmo e modelo?**  
+   O algoritmo é o processo de aprendizado, como se fosse o passo a passo, o modelo é o resultado de executar esse passo a passo, sobre um conjunto de dados específico: ele carrega os parâmetros aprendidos e é o que efetivamente faz as previsões, mesmo algoritmo treinado com dados diferentes gera modelos diferentes por conta dos dados.
 
+3. **Compare uma regra de bloqueio de palavra com um modelo de spam.**  
+   A regra de bloqueio é programação tradicional: alguém define manualmente algo como "se a mensagem contém 'grátis', bloquear". Ela é simples e fácil de explicar, mas é rígida: bloqueia mensagens legítimas que usam a palavra (falso positivo), é burlada com variações como "gr4tis" e exige manutenção manual a cada novo golpe. O modelo de spam aprende, a partir de mensagens já rotuladas como spam ou legítima, combinações de vários sinais ao mesmo tempo (palavras, remetente, quantidade de links, horário) e devolve uma probabilidade. Ele generaliza melhor e pode ser retreinado com exemplos novos, mas depende de dados rotulados de qualidade e é mais difícil de explicar do que uma regra.
 
-2. Qual diferença entre algoritmo e modelo? **Algoritmo é o procedimento de aprendizado (por exemplo, "árvore de decisão" ou "regressão linear"). Modelo é o resultado de aplicar esse algoritmo a um conjunto de dados específico: a árvore com as perguntas e limites já definidos, ou a equação com os coeficientes já calculados. O mesmo algoritmo gera modelos diferentes com dados diferentes.**
-
-3. Compare uma regra de bloqueio de palavra com um modelo de spam. **A regra é programação tradicional: alguém escreve "se a mensagem contém 'promoção', bloqueie". Ela é simples e explicável, mas rígida: bloqueia mensagens legítimas que usam a palavra e deixa passar spam que escreve "pr0moção". O modelo de spam aprende, a partir de mensagens já revisadas como spam/legítima, a combinação de muitos sinais (palavras, remetente, links, horário) e pode ser retreinado quando os spammers mudam de estratégia. Em compensação, depende de dados rotulados de qualidade e também erra.**
-
-4. Dê um exemplo de atributo e alvo e defina o momento da previsão. **No laboratório: atributos = frequência, nota e entregas até a semana 4; alvo = evasão ao fim do semestre (0/1). O momento da previsão é o fim da semana 4: só podem entrar atributos já conhecidos nesse instante, e o alvo só será conhecido no fim do semestre. No nosso TCC, o MVC Finance: atributo = título digitado da transação ("farmácia centro"); alvo = categoria da despesa ("Saúde"); a previsão acontece no momento em que o usuário digita o título no modal "Adicionar Transação", antes de escolher a categoria.**
-
+4. **Dê um exemplo de atributo e alvo e defina o momento da previsão.**  
+   Na previsão de evasão de alunos, os atributos podem ser frequência nas aulas, notas do primeiro bimestre e número de acessos ao ambiente virtual. O alvo é a situação ao fim do semestre: evadiu ou permaneceu. O momento da previsão é o fim do primeiro bimestre, quando ainda dá tempo de intervir. Por isso, o modelo só pode usar informações disponíveis até esse momento; usar a nota final, por exemplo, seria vazamento de dados, porque essa informação não existe na hora em que a previsão precisa ser feita.
 
 ## 2. Quadro comparativo
 
-
 | Critério | Supervisionado | Não supervisionado |
-
 | --- | --- | --- |
-
-| Presença de alvo no treino | Sim, cada exemplo tem a resposta conhecida (rótulo ou valor). | Não há alvo; só atributos. |
-
-| Pergunta que pode responder | "Qual será a classe/valor deste novo caso?" | "Que grupos ou padrões existem nestes dados?" |
-
-| Tipo de saída | Categoria (classificação) ou número (regressão). | Grupos, estruturas, registros atípicos. |
-
-| Tarefas e exemplo | Classificação: spam/legítima; regressão: tempo de espera em minutos. | Agrupamento: perfis de compra; detecção de anomalias. |
-
-| Dados necessários | Histórico com atributos e desfecho registrado de forma confiável. | Atributos relevantes e comparáveis (escalas tratadas). |
-
-| Forma de avaliação | Comparação com o alvo real em dados de teste: acurácia, matriz de confusão, MAE, R². | Medidas internas (ex.: silhueta) e, principalmente, interpretação e utilidade dos grupos por especialistas. |
-
-| Limitação | Rótulos caros, possivelmente enviesados; só aprende o que foi rotulado. | Não há "resposta certa"; grupos podem não ter significado prático. |
-
+| Presença de alvo no treino | Sim. Cada exemplo de treino traz a resposta conhecida (rótulo). | Não. Os dados têm apenas atributos, sem resposta associada. |
+| Pergunta que pode responder | "Qual é a classe ou o valor deste novo caso?" Ex.: este cliente vai pagar? Quanto vamos vender? | "Que padrões ou grupos existem nos dados? O que foge do normal?" |
+| Tipo de saída | Uma categoria (classificação) ou um número (regressão). | Grupos, estruturas, pontuação de anomalia ou representação reduzida dos dados. |
+| Tarefas e exemplo | Classificação (spam/legítima) e regressão (tempo de espera em minutos). | Agrupamento (perfis de compra), detecção de anomalias e redução de dimensionalidade. |
+| Dados necessários | Histórico com atributos e alvo rotulado, em quantidade e qualidade suficientes. | Atributos relevantes e comparáveis entre si (geralmente normalizados), sem necessidade de rótulo. |
+| Forma de avaliação | Comparação das previsões com as respostas reais em dados de teste separados: acurácia, precisão, recall e F1 (classificação); MAE, RMSE e R² (regressão). | Sem gabarito: métricas internas, como silhueta e inércia, mais interpretação e validação por especialistas do negócio. |
+| Limitação | Rotular é caro e demorado; rótulos errados ou enviesados são aprendidos; o modelo tem dificuldade com situações ausentes do histórico. | Resultado difícil de validar; os grupos podem não ter significado prático; depende de escolhas do analista (número de grupos, variáveis, escala). |
 
 ## 3. Situações-problema
 
+Os casos são cenários didáticos. Escolha **pelo menos cinco** e justifique sua classificação pelo significado do alvo ou por sua ausência.
 
 | Caso | Situação-problema |
-
 | --- | --- |
-
 | 1 Educação | Prever evadiu/permaneceu com histórico rotulado de turmas anteriores. |
-
 | 2 Saúde | Estimar o tempo de espera em minutos a partir de registros de atendimento. |
-
 | 3 Comércio | Descobrir perfis de compra sem categorias prévias de clientes. |
-
 | 4 Finanças | Prever inadimplente/adimplente com contratos e desfechos conhecidos. |
-
 | 5 Segurança digital | Distinguir spam/legítima com mensagens já revisadas. |
-
 | 6 Comércio | Estimar o total de vendas em reais na próxima semana. |
-
 | 7 Educação | Agrupar perfis de acesso ao ambiente virtual sem rótulo de evasão. |
-
 | 8 Saúde | Classificar exames em categorias previamente definidas por especialistas. |
 
-
 | Caso escolhido | Alvo ou ausência de alvo | Categoria, quantidade ou grupos? | Abordagem e justificativa | Dados necessários e limitação |
-
 | --- | --- | --- | --- | --- |
-
-| 1 Educação | Alvo: evadiu/permaneceu | Categoria | Supervisionado — classificação, pois o alvo é uma classe conhecida em turmas anteriores. | Frequência, notas, entregas até o momento da previsão. Limitação: turmas antigas podem não representar as atuais; o modelo não explica causas. |
-
-| 2 Saúde | Alvo: tempo de espera (min) | Quantidade | Supervisionado — regressão, pois o alvo é numérico contínuo. | Horário, dia, nº de pacientes, equipe disponível. Limitação: picos raros (surtos) e mudanças de processo distorcem a previsão. |
-
-| 3 Comércio | Sem alvo | Grupos | Não supervisionado — agrupamento, pois não há categorias prévias; queremos descobrir perfis. | Frequência de compra, ticket médio, categorias compradas. Limitação: grupos dependem dos atributos e da escala; precisam de interpretação humana. |
-
-| 5 Segurança digital | Alvo: spam/legítima | Categoria | Supervisionado — classificação, com mensagens já revisadas como rótulo. | Texto, remetente, links, histórico. Limitação: spammers mudam de tática (dados mudam com o tempo); rótulos podem conter erros. |
-
-| 6 Comércio | Alvo: vendas em R$ | Quantidade | Supervisionado — regressão, alvo numérico em reais. | Vendas passadas, sazonalidade, promoções, feriados. Limitação: divisão deve respeitar a ordem temporal; eventos inéditos não são previstos. |
-
-| 7 Educação | Sem alvo (não há rótulo de evasão) | Grupos | Não supervisionado — agrupamento de perfis de acesso. | Logs de acesso: frequência, horário, recursos usados. Limitação: um grupo de "pouco acesso" não significa risco de evasão; privacidade dos logs. |
-
-| 8 Saúde | Alvo: categoria definida por especialistas | Categoria | Supervisionado — classificação, pois as classes já existem e há exemplos rotulados. | Imagens/resultados laudados. Limitação: exige laudos confiáveis e revisão médica; erros têm alto custo. |
-
+| 3 Comércio | Ausência de alvo: não existem categorias prévias de clientes. | Grupos | Não supervisionado (agrupamento, ex.: k-means). O objetivo é descobrir perfis pela semelhança no comportamento de compra, sem rótulo para aprender. | Histórico de compras por cliente (frequência, recência, ticket médio, categorias de produto). Limitação: os grupos precisam ser interpretados por uma pessoa, o número de grupos é escolha do analista e o resultado depende das variáveis usadas. |
+| 2 Saúde | Alvo: tempo de espera em minutos, já registrado nos atendimentos anteriores. | Quantidade | Supervisionado (regressão). O alvo é numérico e contínuo, e os registros históricos fornecem o valor real para o modelo aprender. | Registros com horário de chegada, dia da semana, tipo de atendimento, tamanho da fila, profissionais disponíveis e tempo de espera real. Limitação: emergências e surtos atípicos distorcem a previsão, e registros incompletos ou com horários errados prejudicam o modelo. |
+| 5 Segurança digital | Alvo: rótulo spam/legítima das mensagens já revisadas. | Categoria | Supervisionado (classificação binária). Existem exemplos rotulados e a saída é uma de duas classes. | Mensagens rotuladas com texto, remetente, links e anexos. Limitação: os padrões de spam mudam com o tempo e exigem retreino, um falso positivo bloqueia mensagem legítima e as classes podem estar desbalanceadas. |
+| 4 Finanças | Alvo: desfecho inadimplente/adimplente dos contratos já encerrados. | Categoria | Supervisionado (classificação). O desfecho conhecido serve de rótulo e a saída é uma classe. | Contratos com renda, valor, prazo, histórico de pagamento e desfecho. Limitação: só há dados de quem recebeu crédito (viés de seleção), o histórico pode reproduzir discriminação e os dados pessoais exigem cuidado com a LGPD. |
+| 7 Educação | Ausência de alvo: não há rótulo de evasão. | Grupos | Não supervisionado (agrupamento de perfis de acesso, ex.: ativos, esporádicos, inativos). Sem rótulo, não é possível treinar um modelo para prever evasão, apenas encontrar padrões. Contrasta com o caso 1, em que o mesmo tema vira classificação porque o rótulo existe. | Logs do ambiente virtual (frequência de login, tempo online, atividades entregues, materiais acessados). Limitação: o modelo não prevê evasão diretamente, estar no grupo "inativo" não significa ter evadido e acesso não mede aprendizado. |
 
 ## 4. Raciocínio crítico
 
+“Detectar fraude” define sozinho o tipo de aprendizado? Compare o uso de exemplos rotulados e a busca de operações atípicas sem rótulos.
 
-“Detectar fraude” define sozinho o tipo de aprendizado? **Não. O tipo de aprendizado depende dos dados disponíveis e da pergunta, não do nome do problema. Se existe histórico de operações já investigadas e marcadas como fraude/legítima, é possível usar classificação supervisionada: o modelo aprende padrões de fraudes conhecidas, mas tende a não reconhecer golpes novos e sofre com o desbalanceamento (fraudes são raras). Se não há rótulos, pode-se buscar operações atípicas sem supervisão (detecção de anomalias ou agrupamento): isso pode revelar comportamentos novos, mas "atípico" não é sinônimo de "fraude" — muitas operações incomuns são legítimas e precisam de investigação humana. Na prática, as duas abordagens podem ser combinadas.**
+Não. "Detectar fraude" é um objetivo de negócio, não um tipo de aprendizado; o que define a abordagem é o que os dados disponíveis oferecem, principalmente a existência ou não de um alvo.
 
+Se a empresa tem um histórico de transações já marcadas como fraude ou legítima (por exemplo, após investigação ou contestação do cliente), o problema é **supervisionado de classificação**: o modelo aprende as características das fraudes conhecidas e prevê a classe de cada nova transação. A vantagem é que dá para medir o desempenho com precisão e recall comparando com os rótulos reais. As limitações são que a fraude é rara (classes muito desbalanceadas), o rótulo demora a ser confirmado e o modelo tende a não reconhecer golpes de um tipo que nunca apareceu no histórico.
 
-## 5. Conexão com o nosso TCC — MVC Finance
+Sem rótulos, o problema é **não supervisionado**, com detecção de anomalias ou agrupamento: o modelo aprende como é o comportamento normal (valores, horários, locais e frequência habituais) e sinaliza as operações que fogem desse padrão. A vantagem é conseguir apontar golpes novos sem precisar de exemplos anteriores. A limitação é que atípico não é sinônimo de fraude: uma compra alta legítima ou uma viagem ao exterior também são atípicas, o que gera falsos positivos e exige revisão humana.
 
-
-O MVC Finance (TCC de Kauane e Isabella, com Jhonathan de Moura Santos) é um aplicativo web de gestão financeira pessoal com módulo de educação financeira. Hoje ele usa IA generativa (GPT-4o-mini) para o relatório mensal, mas nenhum modelo de ML treinado com dados próprios. Classificamos três problemas que o sistema poderia resolver com ML:
-
-
-| Problema no MVC Finance | Alvo ou ausência de alvo | Categoria, quantidade ou grupos? | Abordagem e justificativa | Dados necessários e limitação |
-
-| --- | --- | --- | --- | --- |
-
-| Sugerir a categoria ao digitar o título da transação | Alvo: uma das categorias de despesa | Categoria | Supervisionado — classificação; as transações já registradas têm categoria escolhida pelo usuário (rótulo). Reduz o esforço do registro manual, citado no TCC como barreira. Experimento na [atividade 07](07-aplicacao-mvc-finance.md). | Títulos e categorias históricos, com consentimento. Limitação: títulos genéricos ("pix") e rótulos escolhidos errado pelo usuário. |
-
-| Estimar o total de despesas do próximo mês | Alvo: valor em R$ | Quantidade | Supervisionado — regressão; alvo numérico conhecido ao fim de cada mês. | Totais mensais por categoria; divisão temporal obrigatória. Limitação: gastos inesperados e poucos meses de histórico por usuário. |
-
-| Descobrir perfis de gasto para recomendar cursos | Sem alvo | Grupos | Não supervisionado — agrupamento; não existe rótulo de "perfil". Atende ao trabalho futuro do TCC de recomendar cursos com base nos gastos. | Proporção de gastos por categoria (agregada). Limitação: grupos precisam de interpretação; risco de rotular pessoas — a recomendação deve ser opcional. |
-
+Na prática, as duas abordagens costumam ser combinadas: a detecção de anomalias gera alertas, analistas revisam esses alertas, e os casos confirmados viram rótulos que depois treinam um classificador supervisionado.
 
 ## Entrega
 
-
 Salve este arquivo preenchido. Critérios: distinção conceitual, pertinência dos dados, justificativa e clareza. [Voltar ao início](README.md).
-
-
-
-
-
-tudo oque tiver nome de outra equipe coloca eduardo santos morais e thiago regis e tira os que estão 
