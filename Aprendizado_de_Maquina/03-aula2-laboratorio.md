@@ -8,7 +8,7 @@ Ciência de Dados e Aprendizado de Máquina · Sistemas de Informação · 2026.
 - Estudante ou equipe: Thiago Regis Vieira Rocha e Eduardo Morais
 - Turma: **Sistemas de Informação**
 - Data de realização: **22/10/2026**
-- Integrantes e contribuições (se em equipe):Thiago e Eduardo Morais
+- Integrantes e contribuições:Thiago e Eduardo Morais
 
 ## Percurso escolhido
 
