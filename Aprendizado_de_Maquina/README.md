@@ -22,8 +22,7 @@ Este repositório registra as atividades de introdução ao Machine Learning e d
 | [03-aula2-laboratorio.md](03-aula2-laboratorio.md) | Registro do modelo, métricas, erros e experimentos em Python ou Orange |
 | [04-pbl-permanencia.md](04-pbl-permanencia.md) | Proposta de apoio educacional, com avaliação e limites |
 | [05-revisao.md](05-revisao.md) | Respostas individuais às questões de revisão |
-| [06-autoavaliacao.md](06-autoavaliacao.md) | Checklist, contribuições e reflexão final |
-| [07-aplicacao-mvc-finance.md](07-aplicacao-mvc-finance.md) | Aplicação dos conceitos ao nosso TCC, o MVC Finance, com experimento de classificação |
+
 
 ## Arquivos de apoio
 
