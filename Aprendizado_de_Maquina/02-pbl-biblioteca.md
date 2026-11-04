@@ -7,10 +7,10 @@ Ciência de Dados e Aprendizado de Máquina · Sistemas de Informação · 2026.
 
 ## Identificação
 
-- Estudante ou equipe: **Kauane Braga dos Santos Silva de Sousa e Isabella Ana Dutra de Sousa**
+- Estudante ou equipe: **Eduardo santos morais e Thiago regis **
 - Turma: **Sistemas de Informação — Noturno — Quarta-feira**
 - Data de realização: **20/10/2026**
-- Integrantes e contribuições (se em equipe): **Kauane — execução do notebook, experimentos e experimento do MVC Finance; Isabella — PBLs, revisão das respostas e conferência dos links e arquivos. Ambas revisaram o conteúdo completo.**
+- Integrantes e contribuições (se em equipe): **Eduardo — execução do notebook, experimentos e experimento do MVC Finance; Isabella — PBLs, revisão das respostas e conferência dos links e arquivos. Ambos revisaram o conteúdo completo.**
 
 ## Situação-problema
 
@@ -51,8 +51,8 @@ Uma biblioteca universitária enfrenta filas em horários específicos e baixa u
 
 | Integrante | Papel | Contribuição |
 | --- | --- | --- |
-| Kauane Braga dos Santos Silva de Sousa | Analista de dados | Definiu unidade de análise, atributos, alvo e a proposta de regressão e agrupamento. |
-| Isabella Ana Dutra de Sousa | Relatora e responsável por privacidade | Redigiu o canvas, a alternativa sem ML e os cuidados com privacidade e limitações. |
+| Eduardo santos morais | Analista de dados | Definiu unidade de análise, atributos, alvo e a proposta de regressão e agrupamento. |
+| Thiago regis  | Relatora e responsável por privacidade | Redigiu o canvas, a alternativa sem ML e os cuidados com privacidade e limitações. |
 
 ## Conclusão da equipe
 
@@ -64,4 +64,4 @@ Uma biblioteca universitária enfrenta filas em horários específicos e baixa u
 
 ## Entrega
 
-Canvas preenchido e síntese para apresentação de dois minutos. Avaliar coerência da pergunta, dados, abordagem, responsabilidade e colaboração. [Voltar ao início](README.md).
+
