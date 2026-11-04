@@ -9,7 +9,7 @@ Este repositório registra as atividades de introdução ao Machine Learning e d
 
 ## Identificação do repositório
 
-- Estudante ou equipe: **Kauane Braga dos Santos Silva de Sousa e Isabella Ana Dutra de Sousa**
+- Estudante ou equipe: **Eduardo Santos Morais e Thiago Regis Vieira**
 - Turma: **Sistemas de Informação — Noturno — Quarta-feira**
 - Repositórios: **[isabellana20/Ciencia_Dados_Aprendizagem_Maquina](https://github.com/isabellana20/Ciencia_Dados_Aprendizagem_Maquina) e [kauanesousa1/Ciencia_dados_Aprendizagem_Maquina](https://github.com/kauanesousa1/Ciencia_dados_Aprendizagem_Maquina)** — conteúdo na pasta `Aprendizado de máquina/`
 
